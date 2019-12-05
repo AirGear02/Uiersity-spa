@@ -1,0 +1,60 @@
+<div class="wrap">
+<div>
+    <h1>Students</h1>
+    <p>
+        <a href="/#/add-student">Add student</a>
+    </p>
+    <ul>
+        <li ng-repeat='student in students'>
+            <a href="/#/student/{{student._id}}"> {{student.name}} {{student.surname}}</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <h1>Departments</h1>
+    <p>
+        <a href="/#/add-department">Add department</a>
+    </p>
+    <ul>
+        <li ng-repeat='department in departments'>
+            <a href="/#/department/{{department._id}}"> {{department.name}}</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <h1>Subjects</h1>
+    <p>
+        <a href="/#/add-subject">Add subject</a>
+    </p>
+    <ul>
+        <li ng-repeat='subject in subjects'>
+            <a href="/#/subject/{{subject._id}}"> {{subject.name}}</a>
+        </li>
+    </ul>
+</div>
+    <div>
+        <h1>Lecturers</h1>
+        <p>
+            <a href="/#/add-lecturer">Add lecturer</a>
+        </p>
+        <ul>
+            <li ng-repeat='lecturer in lecturers'>
+                <a href="/#/lecturer/{{lecturer._id}}"> {{lecturer.name}} {{lecturer.surname}} </a>
+            </li>
+        </ul>
+    </div>
+    <div class="table">
+            <h1>Exam Results</h1>
+            <p>
+                <a href="/#/add-exam-result">Add exam</a>
+            </p>
+            <table class="table table-bordered">
+                <tr ng-repeat="result in examresults" class="info">
+                    <td><a href="/#/student/{{result.student._id}}">{{result.student.name}} {{result.student.surname}}</a></td>
+                    <td><a href="/#/lecturer/{{result.lecturer._id}}">{{result.lecturer.name}} {{result.lecturer.surname}} {{result.lecturer.middlename}}</a></td>
+                    <td><a href="/#/subject/{{result.subject._id}}">{{result.subject.name}}</a></td>
+                    <td><a href="/#/exam-result/{{result._id}}">{{result.mark}}</td>
+                </tr>
+            </table>
+        </div>
+</div>

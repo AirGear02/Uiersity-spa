@@ -1,0 +1,43 @@
+<h1>Add a student</h1>
+
+<form>
+    <div class="form-group">
+        <label>Name: </label>
+        <input class="form-control" ng-model="student.name"/>
+    </div>
+    <div class="form-group">
+        <label>Surname: </label>
+        <input class="form-control" ng-model="student.surname"/>
+    </div>
+    <div class="form-group">
+        <label>District: </label>
+        <input type="text" class="form-control" ng-model="student.district"/>
+    </div>
+    <div class="form-group">
+        <label>City: </label>
+        <input type="text" class="form-control" ng-model="student.city"/>
+    </div>
+    <div class="form-group">
+        <label>Street: </label>
+        <input type="text" class="form-control" ng-model="student.street"/>
+    </div>
+    <div class="form-group">
+        <label>Birth date: </label>
+        <input type="date" class="form-control" ng-model="student.birthdate"/>
+    </div>
+    <div class="form-group">
+        <label>Faculty: </label>
+        <select ng-options="department.name for department in departments" class="form-control" ng-model="student.department">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Speciality: </label>
+        <select ng-options="speciality.name for speciality in student.department.specialities" class="form-control" 
+        ng-model="student.speciality">
+        </select>
+    </div>
+    <br>
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"/>
+    <button ng-show="visible" confirmed-click="delete()" 
+    ng-confirm-click="Do you really want to delete?"  class="btn btn-danger">Delete</button>
+</form>

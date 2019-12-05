@@ -1,0 +1,24 @@
+<form>
+    <div class="form-group">
+        <label>Name: </label>
+        <input class="form-control" ng-model="lecturer.name"/>
+    </div>
+    <div class="form-group">
+        <label>Surname: </label>
+        <input class="form-control" ng-model="lecturer.surname"/>
+    </div>
+    <div class="form-group">
+        <label>Middle name: </label>
+        <input class="form-control" ng-model="lecturer.middlename"/>
+    </div>
+    <div class="form-group">
+        <label> Subjects: </label>
+        <select ng-options="subject.name for subject in subjects" class="form-control" 
+        ng-model="lecturer.subjects" multiple>
+        </select>
+    </div>
+    <br>
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"/>
+    <button ng-show="visible" confirmed-click="delete()" 
+    ng-confirm-click="Do you really want to delete?"  class="btn btn-danger" >Delete</button>
+</form>

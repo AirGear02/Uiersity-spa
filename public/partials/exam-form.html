@@ -1,0 +1,30 @@
+<h1>Add an exam result</h1>
+
+<form>
+    <div class="form-group">
+        <label>Student: </label>
+        <select ng-options="student.name + ' ' + student.surname for student in students" class="form-control" 
+        ng-model="exam.student">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Lecturer: </label>
+        <select ng-options="lecturer.name + ' ' + lecturer.surname + ' ' + lecturer.middlename for lecturer in lecturers" class="form-control" 
+        ng-model="exam.lecturer">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Subject: </label>
+        <select ng-options="subject.name for subject in exam.lecturer.subjects" class="form-control" 
+        ng-model="exam.subject">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Mark: </label>
+        <input type="number" min="0" max="100" ng-model="exam.mark" class="form-control"/>
+    </div>
+    <br>
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"/>
+    <button ng-show="visible" confirmed-click="delete()" 
+    ng-confirm-click="Do you really want to delete?"  class="btn btn-danger">Delete</button>
+</form>

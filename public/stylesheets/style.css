@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wrap div {
+  width: 350px;
+}
+
+.spec {
+  display: inline-block;
+  width: 30%;
+}
+
+
+table a {
+  color: black;
+}
+.wrap .table {
+  text-align: center;
+  width: 600px;
+}

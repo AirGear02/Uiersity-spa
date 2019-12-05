@@ -1,0 +1,16 @@
+<h1>Add a faculty</h1>
+<form>
+    <div class="form-group">
+        <label>Name: </label>
+        <input type ="text" class="form-control" ng-model="department.name"/>
+    </div>
+    <h3>Specialities:</h3>
+    <div class="form-group" ng-repeat="speciality in department.specialities">
+        <input type="text" class="form-control spec" ng-model="speciality.name" />
+        <input type="button" ng-show="$index == department.specialities.length-1" class="btn btn-primary" ng-click="saves(speciality)" value ="&#10004;"/>
+        <button ng-show="department.specialities.length>1" ng-click="deletes($index)" class="btn btn-danger">&#10008;</button>
+    </div>
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"/>
+    <button ng-show="visible" confirmed-click="delete()" 
+    ng-confirm-click="Do you really want to delete?"  class="btn btn-danger">Delete</button>
+</form>
